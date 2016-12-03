@@ -79,12 +79,12 @@ namespace CSChess
                 }
                 catch (ChessLibrary.Internet.Exceptions.UserLoginError err)
                 {
-                    MessageBox.Show("Ошибка входа.\nПодробнее: " + err.Message, "Ошибка");
+                    Messages.Errors.LoginError(err.Message);
                     return false;
                 }
                 catch (System.Net.Sockets.SocketException err)
                 {
-                    MessageBox.Show("Ошибка подключения.\nПодробнее: " + err.Message, "Ошибка");
+                    Messages.Errors.ConnectError(err.Message);
                     return false;
                 }
             });
@@ -109,12 +109,12 @@ namespace CSChess
                 }
                 catch (ChessLibrary.Internet.Exceptions.UserAlreadyRegistred err)
                 {
-                    MessageBox.Show("Ошибка регистрации.\nПодробнее: " + err.Message, "Ошибка");
+                    Messages.Errors.RegisterError(err.Message);
                     return false;
                 }
                 catch (System.Net.Sockets.SocketException err)
                 {
-                    MessageBox.Show("Ошибка подключения.\nПодробнее: " + err.Message, "Ошибка");
+                    Messages.Errors.ConnectError(err.Message);
                     return false;
                 }
             });

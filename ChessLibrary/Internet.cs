@@ -35,7 +35,13 @@ namespace ChessLibrary
         }
         //Статистика
         //Еще что-то
+        public string name { get; set; }
         public ID id { get; set; }
+
+        public User() { }
+        public User(string name) { this.name = name; }
+        public User(string name, byte[] id) { this.name = name; this.id = new ID(id); }
+        public User(string name, ID id) { this.name = name; this.id = id; }
     }
     public class Internet
     {
@@ -45,10 +51,6 @@ namespace ChessLibrary
             {
                 public UserLoginError(string message) : base(message) { }
             }
-            public class UserAlreadyJoined : UserLoginError
-            {
-                public UserAlreadyJoined(string message) : base(message) { }
-            }
             public class UserAlreadyRegistred : UserLoginError
             {
                 public UserAlreadyRegistred(string message) : base(message) { }
@@ -56,8 +58,8 @@ namespace ChessLibrary
         }
         Socket socket;
         public Internet() { }
-        private bool isLogged;
-        public bool IsLogged { get { return isLogged; } }
+        //private bool isLogged;
+        //public bool IsLogged { get { return isLogged; } }
         private bool isConnected;
         public bool IsConnected { get { return isConnected; } }
         public void Connect(string IP)
@@ -84,27 +86,23 @@ namespace ChessLibrary
             byte[] receive = new byte[64];
             int lenght = socket.Receive(receive);
             if (receive[0] == 1)
-                throw new Exceptions.UserAlreadyJoined("User has already joined");
-            else if (receive[0] == 2)
                 throw new Exceptions.UserLoginError("Password or/and login incorrect");
             else
             {
                 //string rec = Encoding.UTF8.GetString(receive, 1, lenght);
                 //string[] recData = rec.Split('/');  //TODO
-                isLogged = true;
                 return new User();
             }
         }
 
-        public void Register(string login, string password)
+        public User Register(string login, string password)
         {
             socket.Send(DataToArray(2, login, password));
             byte[] receive = new byte[1];
             socket.Receive(receive);
             if (receive[0] == 2)
                 throw new Exceptions.UserAlreadyRegistred("User has already registered");
-            isLogged = true;
-            return;
+            return new User();
         }
 
         public User.ID GetID(string login, string password)
