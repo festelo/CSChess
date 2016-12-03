@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSChess", "CSChess\CSChess.csproj", "{734557AE-14BA-4D8B-9116-4BC4A89B97F1}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ChessLibrary", "ChessLibrary\ChessLibrary.xproj", "{9EECB25D-1966-47D4-8774-1D9365D99C6C}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Server", "Server\Server.pyproj", "{B1F45812-EADE-40D5-B853-270B21910651}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{734557AE-14BA-4D8B-9116-4BC4A89B97F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{734557AE-14BA-4D8B-9116-4BC4A89B97F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{734557AE-14BA-4D8B-9116-4BC4A89B97F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{734557AE-14BA-4D8B-9116-4BC4A89B97F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EECB25D-1966-47D4-8774-1D9365D99C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EECB25D-1966-47D4-8774-1D9365D99C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EECB25D-1966-47D4-8774-1D9365D99C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EECB25D-1966-47D4-8774-1D9365D99C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F45812-EADE-40D5-B853-270B21910651}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F45812-EADE-40D5-B853-270B21910651}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

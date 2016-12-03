@@ -1,0 +1,29 @@
+﻿<Window x:Class="CSChess.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSChess"
+        mc:Ignorable="d"
+        Title="Login" Height="120" Width="187" ResizeMode="CanMinimize">
+    <!--<Grid Margin="0,2,2,1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="116" Width="240"> -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="LoginText" VerticalAlignment="Center"  HorizontalAlignment="Center"  TextWrapping="Wrap"  Text="Login"/>
+        <TextBlock x:Name="PasswordText" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" TextWrapping="Wrap" Text="Password"/>
+        <TextBox x:Name="LoginBox" Grid.Column="1"  TextWrapping="Wrap" TextAlignment="Center" MaxLines="1" />
+        <TextBox x:Name="PasswordBox" Grid.Column="1" Grid.Row="1" TextWrapping="Wrap" TextAlignment="Center" MaxLines="1" />
+        <Button x:Name="LoginBtn" Grid.ColumnSpan="2" Content="Login" Grid.Row="2" Click="LoginBtn_Click"/>
+        <Button x:Name="RegisterBtn"  Grid.Column="1" Content="Register" Grid.Row="3" Height="23" VerticalAlignment="Top" Click="RegisterBtn_Click"/>
+        <Button x:Name="OfflineBtn" Content="Offline" Grid.Row="3"/>
+    </Grid>
+</Window>
